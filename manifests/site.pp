@@ -1,11 +1,11 @@
-node master {
+node master.puppet {
   service { 'firewalld':
     ensure => stopped,
     enable => false,
   }
 }
 
-node slave1 {
+node slave1.puppet {
   package { 'httpd':
     ensure => installed,
     name   => httpd,
@@ -24,7 +24,7 @@ node slave1 {
   }
 }
 
-node slave2 {
+node slave2.puppet {
   package { 'httpd':
     ensure => installed,
     name   => httpd,
