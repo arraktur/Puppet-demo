@@ -8,7 +8,6 @@ node master.puppet {
 node slave1.puppet {
   package { 'httpd':
     ensure => installed,
-    name   => httpd,
   }
   file { '/var/www/html/index.html':
     ensure => present,
@@ -27,11 +26,9 @@ node slave1.puppet {
 node slave2.puppet {
   package { 'httpd':
     ensure => installed,
-    name   => httpd,
   }
   package { 'php':
     ensure => installed,
-    name   => php,
   }
   file { '/var/www/html/index.php':
     ensure => present,
